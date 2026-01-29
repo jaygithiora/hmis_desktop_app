@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane fx:id="mainContainer" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.githiora.hmis_app.controllers.MainLayoutController"
+            prefHeight="700.0" prefWidth="1000.0">
+    
+    <!-- Top Navigation/Header -->
+    <top>
+        <HBox style="-fx-background-color: #2196F3; -fx-padding: 15;" spacing="10" alignment="CENTER_LEFT">
+            <Label text="My Application" style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="userLabel" text="Welcome, User" style="-fx-text-fill: white;"/>
+            <Button fx:id="logoutBtn" text="Logout" onAction="#handleLogout"
+                    style="-fx-background-color: #1976D2; -fx-text-fill: white;"/>
+        </HBox>
+    </top>
+    
+    <!-- Left Sidebar -->
+    <left>
+        <VBox style="-fx-background-color: #f5f5f5; -fx-padding: 15;" spacing="10" prefWidth="200">
+            <Label text="Menu" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <Separator/>
+            <Button text="Dashboard" onAction="#showDashboard" prefWidth="170"
+                    style="-fx-background-color: transparent; -fx-alignment: center-left;"/>
+            <Button text="Users" onAction="#showUsers" prefWidth="170"
+                    style="-fx-background-color: transparent; -fx-alignment: center-left;"/>
+            <Button text="Settings" onAction="#showSettings" prefWidth="170"
+                    style="-fx-background-color: transparent; -fx-alignment: center-left;"/>
+        </VBox>
+    </left>
+    
+    <!-- Center - Dynamic Content Area -->
+    <center>
+        <StackPane fx:id="contentArea" style="-fx-background-color: white;">
+            <!-- Child views will be loaded here -->
+        </StackPane>
+    </center>
+    
+    <!-- Bottom Footer -->
+    <bottom>
+        <HBox style="-fx-background-color: #e0e0e0; -fx-padding: 10;" alignment="CENTER">
+            <Label text="© 2026 Your Company"/>
+        </HBox>
+    </bottom>
+    
+</BorderPane>

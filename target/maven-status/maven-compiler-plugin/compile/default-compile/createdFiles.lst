@@ -1,0 +1,3 @@
+com\githiora\hmis_app\Hmis_app.class
+com\githiora\hmis_app\controllers\MainLayoutController.class
+com\githiora\hmis_app\controllers\Login\LoginController.class
