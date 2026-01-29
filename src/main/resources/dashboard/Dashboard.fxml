@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" />
+<VBox xmlns:fx="http://javafx.com/fxml"
+      spacing="20" style="-fx-padding: 30;">
+    
+    <Label text="Dashboard" styleClass="label-header"/>
+    
+    <HBox spacing="20">
+        <!-- Card 1 -->
+        <VBox styleClass="card" prefWidth="250" prefHeight="150" 
+              alignment="CENTER" spacing="10">
+            <Label text="Total Patients" style="-fx-font-size: 16px;"/>
+            <Label text="1,234" style="-fx-font-size: 36px; -fx-font-weight: bold; 
+                   -fx-text-fill: #2196F3;"/>
+        </VBox>
+        
+        <!-- Card 2 -->
+        <VBox styleClass="card" prefWidth="250" prefHeight="150" 
+              alignment="CENTER" spacing="10">
+            <Label text="Active Staff" style="-fx-font-size: 16px;"/>
+            <Label text="89" style="-fx-font-size: 36px; -fx-font-weight: bold; 
+                   -fx-text-fill: #4CAF50;"/>
+        </VBox>
+        
+        <!-- Card 3 -->
+        <VBox styleClass="card" prefWidth="250" prefHeight="150" 
+              alignment="CENTER" spacing="10">
+            <Label text="Appointments" style="-fx-font-size: 16px;"/>
+            <Label text="42" style="-fx-font-size: 36px; -fx-font-weight: bold; 
+                   -fx-text-fill: #FF5722;"/>
+        </VBox>
+    </HBox>
+    
+    <VBox styleClass="card" spacing="15">
+        <Label text="Recent Activity" styleClass="label-subheader"/>
+        <Separator/>
+        <Label text="• New patient registered - John Doe"/>
+        <Label text="• Appointment scheduled - 2:00 PM"/>
+        <Label text="• Lab results updated - Patient #1234"/>
+    </VBox>
+    
+</VBox>

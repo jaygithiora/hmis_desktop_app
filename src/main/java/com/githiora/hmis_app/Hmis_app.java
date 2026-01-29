@@ -18,7 +18,8 @@ public class Hmis_app extends Application {
         primaryStage.setTitle("My Application");
         
         // Start with login screen
-        showLogin();
+        //showLogin();
+        showMainLayout();
     }
 
     public static void showLogin() throws Exception {
@@ -27,14 +28,16 @@ public class Hmis_app extends Application {
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.show();
+        primaryStage.setMaximized(true);
     }
 
     public static void showMainLayout() throws Exception {
         FXMLLoader loader = new FXMLLoader(Hmis_app.class.getResource("/MainLayout.fxml"));
         Parent root = loader.load();
-        Scene scene = new Scene(root, 1000, 700);
+        Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.show();
+        primaryStage.setMaximized(true);
     }
 
     public static Stage getPrimaryStage() {
