@@ -1,35 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="mainContainer" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.githiora.hmis_app.controllers.MainLayoutController"
-            prefHeight="700.0" prefWidth="1000.0">
+<BorderPane fx:id="mainContainer" prefHeight="700.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="com.githiora.hmis_app.controllers.MainLayoutController">
     
     <!-- Top Navigation/Header -->
     <top>
-        <HBox style="-fx-background-color: #2196F3; -fx-padding: 15;" spacing="10" alignment="CENTER_LEFT">
-            <Label text="My Application" style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
-            <Region HBox.hgrow="ALWAYS"/>
-            <Label fx:id="userLabel" text="Welcome, User" style="-fx-text-fill: white;"/>
-            <Button fx:id="logoutBtn" text="Logout" onAction="#handleLogout"
-                    style="-fx-background-color: #1976D2; -fx-text-fill: white;"/>
+        <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-background-color: #2196F3; -fx-padding: 15;">
+            <Label style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;" text="My Application" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="userLabel" style="-fx-text-fill: white;" text="Welcome, User" />
+            <Button fx:id="logoutBtn" onAction="#handleLogout" style="-fx-background-color: #1976D2; -fx-text-fill: white;" text="Logout" />
         </HBox>
     </top>
     
     <!-- Left Sidebar -->
     <left>
-        <VBox style="-fx-background-color: #f5f5f5; -fx-padding: 15;" spacing="10" prefWidth="200">
-            <Label text="Menu" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
-            <Separator/>
-            <Button text="Dashboard" onAction="#showDashboard" prefWidth="170"
-                    style="-fx-background-color: transparent; -fx-alignment: center-left;"/>
-            <Button text="Users" onAction="#showUsers" prefWidth="170"
-                    style="-fx-background-color: transparent; -fx-alignment: center-left;"/>
-            <Button text="Settings" onAction="#showSettings" prefWidth="170"
-                    style="-fx-background-color: transparent; -fx-alignment: center-left;"/>
+        <VBox prefWidth="200" spacing="10" style="-fx-background-color: #f5f5f5; -fx-padding: 15;">
+            <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Menu" />
+            <Separator />
+            <Button onAction="#showDashboard" prefWidth="170" style="-fx-background-color: transparent; -fx-alignment: center-left;" text="Dashboard" />
+            <Button onAction="#showUsers" prefWidth="170" style="-fx-background-color: transparent; -fx-alignment: center-left;" text="Users" />
+            <Button onAction="#showSettings" prefWidth="170" style="-fx-background-color: transparent; -fx-alignment: center-left;" text="Settings" />
         </VBox>
     </left>
     
@@ -42,8 +41,8 @@
     
     <!-- Bottom Footer -->
     <bottom>
-        <HBox style="-fx-background-color: #e0e0e0; -fx-padding: 10;" alignment="CENTER">
-            <Label text="© 2026 Your Company"/>
+        <HBox alignment="CENTER" style="-fx-background-color: #e0e0e0; -fx-padding: 10;">
+            <Label text="© 2026 Your Company" />
         </HBox>
     </bottom>
     

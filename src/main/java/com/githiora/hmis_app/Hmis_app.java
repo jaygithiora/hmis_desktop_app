@@ -17,14 +17,14 @@ public class Hmis_app extends Application {
     public void start(Stage stage) throws Exception {
         primaryStage = stage;
         primaryStage.setTitle("My Application");
-        if (ConfigService.configExists()) {
-            showLogin();
-        } else {
-            showDbSetup();
-        }
+        //if (ConfigService.configExists()) {
+            //showLogin();
+        //} else {
+            //showDbSetup();
+        //}
         // Start with login screen
         //showLogin();
-        //showMainLayout();
+        showMainLayout();
     }
 
     public static void showLogin() throws Exception {

@@ -1,7 +1,10 @@
 C:\Users\Admin\Documents\NetBeansProjects\hmis_app\src\main\java\com\githiora\hmis_app\configs\ConfigService.java
 C:\Users\Admin\Documents\NetBeansProjects\hmis_app\src\main\java\com\githiora\hmis_app\configs\DbConfig.java
+C:\Users\Admin\Documents\NetBeansProjects\hmis_app\src\main\java\com\githiora\hmis_app\controllers\dashboard\SidebarController.java
 C:\Users\Admin\Documents\NetBeansProjects\hmis_app\src\main\java\com\githiora\hmis_app\controllers\DbSetupController.java
 C:\Users\Admin\Documents\NetBeansProjects\hmis_app\src\main\java\com\githiora\hmis_app\controllers\Login\LoginController.java
 C:\Users\Admin\Documents\NetBeansProjects\hmis_app\src\main\java\com\githiora\hmis_app\controllers\MainLayoutController.java
 C:\Users\Admin\Documents\NetBeansProjects\hmis_app\src\main\java\com\githiora\hmis_app\db\DBConnection.java
 C:\Users\Admin\Documents\NetBeansProjects\hmis_app\src\main\java\com\githiora\hmis_app\Hmis_app.java
+C:\Users\Admin\Documents\NetBeansProjects\hmis_app\src\main\java\com\githiora\hmis_app\utils\MigrationManager.java
+C:\Users\Admin\Documents\NetBeansProjects\hmis_app\src\main\java\com\githiora\hmis_app\utils\PasswordUtil.java
