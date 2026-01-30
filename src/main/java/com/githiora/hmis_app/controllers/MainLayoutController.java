@@ -32,6 +32,21 @@ public class MainLayoutController {
             e.printStackTrace();
         }
     }
+    
+    public void loadViewWithPath(String viewName) {
+        try {
+            FXMLLoader loader = new FXMLLoader(
+                getClass().getResource(viewName)
+            );
+            
+            Parent view = loader.load();
+            contentArea.getChildren().clear();
+            contentArea.getChildren().add(view);
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     private void showDashboard() {

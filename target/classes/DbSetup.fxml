@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox fx:id="rootContainer" prefHeight="800" prefWidth="1400" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.githiora.hmis_app.controllers.Login.LoginController">
+    
+    <!-- Left Section - 4 parts -->
+    <VBox fx:id="leftSection" styleClass="login-left-section" HBox.hgrow="ALWAYS">
+        <VBox alignment="CENTER" spacing="20" styleClass="login-overlay" VBox.vgrow="ALWAYS">
+            <Label style="-fx-font-size: 48px; -fx-font-weight: bold; -fx-text-fill: white;" text="HMIS" />
+            <Label maxWidth="400" style="-fx-font-size: 18px; -fx-text-fill: white; -fx-text-alignment: center;" text="Hospital Management Information System" wrapText="true" />
+            <Label style="-fx-font-size: 16px; -fx-text-fill: rgba(255,255,255,0.8);" text="Efficient • Reliable • Secure" />
+        </VBox>
+    </VBox>
+    
+    <!-- Right Section - 3 parts -->
+    <VBox fx:id="rightSection" alignment="CENTER" spacing="30" style="-fx-background-color: white;" styleClass="login-right-section">
+        <padding>
+            <Insets bottom="60" left="60" right="60" top="60" />
+        </padding>
+        
+        <!-- Rest of your form here -->
+        <VBox alignment="CENTER" spacing="10">
+            <Label style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Welcome Back" />
+            <Label style="-fx-font-size: 14px; -fx-text-fill: #666;" text="Sign in to continue" />
+        </VBox>
+        
+        <VBox prefWidth="320" spacing="20">
+            <VBox spacing="8">
+                <Label style="-fx-font-weight: 600; -fx-text-fill: #333;" text="Username" />
+                <TextField fx:id="usernameField" promptText="Enter your username" styleClass="login-text-field" />
+            </VBox>
+            
+            <VBox spacing="8">
+                <Label style="-fx-font-weight: 600; -fx-text-fill: #333;" text="Password" />
+                <PasswordField fx:id="passwordField" promptText="Enter your password" styleClass="login-text-field" />
+            </VBox>
+            
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <CheckBox style="-fx-text-fill: #666;" text="Remember me" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Label style="-fx-text-fill: #2196F3; -fx-cursor: hand; -fx-underline: true;" text="Forgot Password?" />
+            </HBox>
+            <HBox alignment="CENTER" spacing="10">
+            <Button maxWidth="Infinity" onAction="#handleLogin" prefHeight="45" prefWidth="320" styleClass="login-button" text="Sign In" HBox.hgrow="ALWAYS" />
+            </HBox>
+            <HBox alignment="CENTER" spacing="10" style="-fx-padding: 10 0 10 0;">
+                <Separator HBox.hgrow="ALWAYS" />
+                <Label style="-fx-text-fill: #999;" text="OR" />
+                <Separator HBox.hgrow="ALWAYS" />
+            </HBox>
+            
+            <HBox alignment="CENTER" spacing="10">
+                <Button maxWidth="Infinity" prefHeight="40" prefWidth="320" styleClass="login-button-secondary" text="Sign in with SSO" HBox.hgrow="ALWAYS" />
+            </HBox>
+        </VBox>
+        
+        <VBox alignment="CENTER" spacing="5" style="-fx-padding: 20 0 0 0;">
+            <Label style="-fx-text-fill: #666;" text="Don't have an account?" />
+            <Label style="-fx-text-fill: #2196F3; -fx-cursor: hand; -fx-font-weight: 600;" text="Contact Administrator" />
+        </VBox>
+    </VBox>
+    
+</HBox>

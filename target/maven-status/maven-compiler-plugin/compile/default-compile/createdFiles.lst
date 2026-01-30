@@ -1,3 +1,7 @@
+com\githiora\hmis_app\configs\ConfigService.class
+com\githiora\hmis_app\configs\DbConfig.class
 com\githiora\hmis_app\Hmis_app.class
 com\githiora\hmis_app\controllers\MainLayoutController.class
 com\githiora\hmis_app\controllers\Login\LoginController.class
+com\githiora\hmis_app\db\DBConnection.class
+com\githiora\hmis_app\controllers\DbSetupController.class

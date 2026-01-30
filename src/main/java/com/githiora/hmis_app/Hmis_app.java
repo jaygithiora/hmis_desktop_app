@@ -1,6 +1,7 @@
 
 package com.githiora.hmis_app;
 
+import com.githiora.hmis_app.configs.ConfigService;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -16,10 +17,14 @@ public class Hmis_app extends Application {
     public void start(Stage stage) throws Exception {
         primaryStage = stage;
         primaryStage.setTitle("My Application");
-        
+        if (ConfigService.configExists()) {
+            showLogin();
+        } else {
+            showDbSetup();
+        }
         // Start with login screen
         //showLogin();
-        showMainLayout();
+        //showMainLayout();
     }
 
     public static void showLogin() throws Exception {
@@ -39,6 +44,14 @@ public class Hmis_app extends Application {
         primaryStage.show();
         primaryStage.setMaximized(true);
     }
+    
+    private void showDbSetup() throws Exception {
+    FXMLLoader loader = new FXMLLoader(Hmis_app.class.getResource("/DbSetup.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+}
 
     public static Stage getPrimaryStage() {
         return primaryStage;
