@@ -1,40 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="1.7976931348623157E308" maxWidth="-Infinity" prefWidth="240" spacing="5" styleClass="sidebar" stylesheets="@../../css/sidebar.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.githiora.hmis_app.controllers.dashboard.SidebarController">
-
-    <!-- App title / logo -->
-    <Label styleClass="sidebar-title" text="HMIS" />
-
-    <!-- Main menu buttons -->
-    <Button  styleClass="sidebar-button" text="Dashboard" />
-
-    <!-- Patients menu -->
-    <TitledPane expanded="false" text="Patients">
-        <VBox spacing="5">
-            <Button text="Add Patient" />
-            <Button text="View Patients" />
+<VBox fx:id="sidebarRoot" styleClass="sidebar" stylesheets="@../../css/sidebar.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="com.githiora.hmis_app.controllers.dashboard.SidebarController">
+    
+    <!-- Sidebar Header -->
+    <HBox styleClass="sidebar-header">
+        <Label styleClass="sidebar-header-label" text="HMIS" />
+    </HBox>
+    
+    <!-- User Panel -->
+    <VBox styleClass="sidebar-user-panel">
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label style="-fx-font-size: 32px; -fx-text-fill: white;" text="👤" />
+            <VBox>
+                <Label fx:id="userNameLabel" styleClass="user-name" text="Admin User" />
+                <Label fx:id="userRoleLabel" styleClass="user-role" text="Administrator" />
+            </VBox>
+        </HBox>
+    </VBox>
+    
+    <Separator styleClass="sidebar-separator" />
+    
+    <!-- Scrollable Menu Area -->
+    <ScrollPane fitToWidth="true" style="-fx-background: transparent; -fx-background-color: transparent;" VBox.vgrow="ALWAYS">
+        <VBox fx:id="menuContainer" spacing="0">
+            <!-- Menus will be added programmatically -->
         </VBox>
-    </TitledPane>
-
-    <!-- Users menu -->
-    <TitledPane expanded="false" text="Users">
-        <VBox spacing="5">
-            <Button  text="Add User" />
-            <Button  text="Manage Users" />
-        </VBox>
-    </TitledPane>
-
-    <!-- Billing menu -->
-    <TitledPane expanded="false" text="Billing">
-        <VBox spacing="5">
-            <Button text="Invoices" />
-            <Button text="Payments" />
-        </VBox>
-    </TitledPane>
-
+    </ScrollPane>
+    
+    <!-- Sidebar Footer (Optional) -->
+    <VBox style="-fx-padding: 15px; -fx-background-color: rgba(0,0,0,0.2);" styleClass="sidebar-footer">
+        <Label style="-fx-text-fill: rgba(255,255,255,0.5); -fx-font-size: 11px;" text="Version 1.0.0" />
+    </VBox>
+    
 </VBox>

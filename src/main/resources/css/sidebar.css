@@ -1,21 +1,154 @@
+/* ========================================
+   ADMINLTE SIDEBAR STYLES
+   ======================================== */
+
+/* Sidebar Container */
 .sidebar {
-    -fx-background-color: #1f2937;
-    -fx-padding: 15;
+    -fx-background-color: #343a40;
+    -fx-pref-width: 250px;
 }
 
-.sidebar-title {
+/* Sidebar Header */
+.sidebar-header {
+    -fx-background-color: #007bff;
+    -fx-padding: 20px 15px;
+    -fx-alignment: center;
+}
+
+.sidebar-header .label {
     -fx-text-fill: white;
-    -fx-font-size: 18px;
+    -fx-font-size: 20px;
     -fx-font-weight: bold;
 }
 
-.sidebar .button {
+/* Sidebar User Panel */
+.sidebar-user-panel {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-padding: 15px;
+    -fx-spacing: 10px;
+}
+
+.sidebar-user-panel .label {
+    -fx-text-fill: white;
+}
+
+.user-name {
+    -fx-font-weight: 600;
+    -fx-font-size: 14px;
+}
+
+.user-role {
+    -fx-font-size: 12px;
+    -fx-text-fill: rgba(255, 255, 255, 0.6);
+}
+
+/* Menu Section Label */
+.menu-section-label {
+    -fx-text-fill: #6c757d;
+    -fx-font-size: 11px;
+    -fx-font-weight: 600;
+    -fx-padding: 15px 15px 5px 15px;
+    -fx-text-transform: uppercase;
+}
+
+/* Parent Menu Item */
+.menu-parent-item {
     -fx-background-color: transparent;
-    -fx-text-fill: #e5e7eb;
-    -fx-alignment: CENTER_LEFT;
+    -fx-text-fill: #c2c7d0;
+    -fx-font-size: 14px;
+    -fx-padding: 12px 15px;
+    -fx-alignment: center-left;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-cursor: hand;
 }
 
-.sidebar .button:hover {
-    -fx-background-color: #374151;
+.menu-parent-item:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-text-fill: white;
 }
 
+.menu-parent-item.active {
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+}
+
+/* Child Menu Container */
+.menu-children-container {
+    -fx-background-color: rgba(0, 0, 0, 0.2);
+    -fx-padding: 5px 0;
+}
+
+/* Child Menu Item */
+.menu-child-item {
+    -fx-background-color: transparent;
+    -fx-text-fill: #c2c7d0;
+    -fx-font-size: 13px;
+    -fx-padding: 10px 15px 10px 45px;
+    -fx-alignment: center-left;
+    -fx-background-radius: 0;
+    -fx-cursor: hand;
+}
+
+.menu-child-item:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-text-fill: white;
+}
+
+.menu-child-item.active {
+    -fx-background-color: rgba(0, 123, 255, 0.3);
+    -fx-text-fill: white;
+    -fx-border-color: #007bff;
+    -fx-border-width: 0 0 0 3px;
+}
+
+/* Menu Item Icon */
+.menu-icon {
+    -fx-min-width: 20px;
+    -fx-pref-width: 20px;
+    -fx-text-fill: inherit;
+}
+
+/* Menu Item Text */
+.menu-text {
+    -fx-text-fill: inherit;
+}
+
+/* Expand Arrow */
+.menu-arrow {
+    -fx-text-fill: rgba(255, 255, 255, 0.4);
+    -fx-font-size: 12px;
+}
+
+.menu-arrow.expanded {
+    -fx-rotate: 90;
+}
+
+/* Scrollbar in Sidebar */
+.sidebar .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.sidebar .scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.sidebar .scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.sidebar .scroll-bar:vertical .track {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar .scroll-bar:vertical .thumb {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-background-radius: 5px;
+}
+
+/* Separator */
+.sidebar-separator {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-pref-height: 1px;
+    -fx-padding: 10px 0;
+}
