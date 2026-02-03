@@ -5,8 +5,9 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<VBox fx:id="sidebarRoot" styleClass="sidebar" stylesheets="@../../css/sidebar.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="com.githiora.hmis_app.controllers.dashboard.SidebarController">
+<VBox fx:id="sidebarRoot" styleClass="sidebar" stylesheets="@../../css/sidebar.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.githiora.hmis_app.controllers.dashboard.SidebarController">
     
     <!-- Sidebar Header -->
     <HBox styleClass="sidebar-header">
@@ -16,7 +17,10 @@
     <!-- User Panel -->
     <VBox styleClass="sidebar-user-panel">
         <HBox alignment="CENTER_LEFT" spacing="10">
-            <Label style="-fx-font-size: 32px; -fx-text-fill: white;" text="👤" />
+            <Label style="-fx-font-size: 32px; -fx-text-fill: white;">
+            <graphic>
+               <FontIcon iconColor="WHITE" iconLiteral="far-user" wrappingWidth="37.0" />
+            </graphic></Label>
             <VBox>
                 <Label fx:id="userNameLabel" styleClass="user-name" text="Admin User" />
                 <Label fx:id="userRoleLabel" styleClass="user-role" text="Administrator" />

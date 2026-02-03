@@ -13,6 +13,9 @@ import javafx.util.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
+import javafx.scene.paint.Color;
+import org.kordamp.ikonli.fontawesome5.FontAwesomeSolid;
+import org.kordamp.ikonli.javafx.FontIcon;
 
 
 public class SidebarController {
@@ -54,28 +57,28 @@ public class SidebarController {
         addSectionLabel("MAIN NAVIGATION");
         
         // Dashboard (no children)
-        addMenuItem("📊", "Dashboard", "dashboard", null);
+        addMenuItem(new FontIcon(FontAwesomeSolid.TH), "Dashboard", "dashboard", null);
         
         // Patients Menu (with children)
         List<MenuItem> patientsChildren = new ArrayList<>();
         patientsChildren.add(new MenuItem("All Patients", "patients/all"));
         patientsChildren.add(new MenuItem("New Patient", "patients/new"));
         patientsChildren.add(new MenuItem("Patient Records", "patients/records"));
-        addMenuItem("👥", "Patients", null, patientsChildren);
+        addMenuItem(new FontIcon(FontAwesomeSolid.USER_INJURED), "Patients", null, patientsChildren);
         
         // Appointments Menu (with children)
         List<MenuItem> appointmentsChildren = new ArrayList<>();
         appointmentsChildren.add(new MenuItem("All Appointments", "appointments/all"));
         appointmentsChildren.add(new MenuItem("Schedule New", "appointments/schedule"));
         appointmentsChildren.add(new MenuItem("Calendar View", "appointments/calendar"));
-        addMenuItem("📅", "Appointments", null, appointmentsChildren);
+        addMenuItem(new FontIcon(FontAwesomeSolid.CALENDAR), "Appointments", null, appointmentsChildren);
         
         // Doctors Menu (with children)
         List<MenuItem> doctorsChildren = new ArrayList<>();
         doctorsChildren.add(new MenuItem("All Doctors", "doctors/all"));
         doctorsChildren.add(new MenuItem("Add Doctor", "doctors/add"));
         doctorsChildren.add(new MenuItem("Schedules", "doctors/schedules"));
-        addMenuItem("⚕", "Doctors", null, doctorsChildren);
+        addMenuItem(new FontIcon(FontAwesomeSolid.USER_MD), "Doctors", null, doctorsChildren);
         
         addSectionLabel("ADMINISTRATION");
         
@@ -84,17 +87,17 @@ public class SidebarController {
         usersChildren.add(new MenuItem("All Users", "users/all"));
         usersChildren.add(new MenuItem("Roles", "users/roles"));
         usersChildren.add(new MenuItem("Permissions", "users/permissions"));
-        addMenuItem("👤", "Users & Roles", null, usersChildren);
+        addMenuItem(new FontIcon(FontAwesomeSolid.USERS), "Users & Roles", null, usersChildren);
         
         // Settings (with children)
         List<MenuItem> settingsChildren = new ArrayList<>();
         settingsChildren.add(new MenuItem("General", "settings/general"));
         settingsChildren.add(new MenuItem("Database", "settings/database"));
         settingsChildren.add(new MenuItem("Backup", "settings/backup"));
-        addMenuItem("⚙", "Settings", null, settingsChildren);
+        addMenuItem(new FontIcon(FontAwesomeSolid.COG), "Settings", null, settingsChildren);
         
         // Reports (no children)
-        addMenuItem("📈", "Reports", "reports", null);
+        addMenuItem(new FontIcon(FontAwesomeSolid.CHART_LINE), "Reports", "reports", null);
     }
 
     private void addSectionLabel(String text) {
@@ -103,7 +106,7 @@ public class SidebarController {
         menuContainer.getChildren().add(sectionLabel);
     }
 
-    private void addMenuItem(String icon, String text, String viewPath, List<MenuItem> children) {
+    private void addMenuItem(FontIcon icon, String text, String viewPath, List<MenuItem> children) {
         VBox menuItemContainer = new VBox();
         menuItemContainer.setSpacing(0);
         
@@ -129,7 +132,7 @@ public class SidebarController {
         menuContainer.getChildren().add(menuItemContainer);
     }
 
-    private HBox createParentButton(String icon, String text, String viewPath, 
+    private HBox createParentButton(FontIcon icon, String text, String viewPath, 
                                     List<MenuItem> children, VBox container) {
         HBox button = new HBox();
         button.getStyleClass().add("menu-parent-item");
@@ -138,13 +141,16 @@ public class SidebarController {
         button.setPadding(new Insets(12, 15, 12, 15));
         
         // Icon
-        Label iconLabel = new Label(icon);
+        Label iconLabel = new Label();
+        icon.setIconColor(Color.WHITE);
+        iconLabel.setGraphic(icon);
         iconLabel.getStyleClass().add("menu-icon");
         iconLabel.setStyle("-fx-font-size: 16px;");
         
         // Text
         Label textLabel = new Label(text);
         textLabel.getStyleClass().add("menu-text");
+        textLabel.setMaxWidth(Double.MAX_VALUE);
         HBox.setHgrow(textLabel, Priority.ALWAYS);
         
         button.getChildren().addAll(iconLabel, textLabel);
@@ -152,7 +158,10 @@ public class SidebarController {
         // Arrow for expandable menus
         Label arrow = null;
         if (children != null && !children.isEmpty()) {
-            arrow = new Label("▶");
+            FontIcon iconArrow = new FontIcon(FontAwesomeSolid.CHEVRON_RIGHT);
+            iconArrow.setIconColor(Color.WHITE);
+            arrow = new Label();
+            arrow.setGraphic(iconArrow);
             arrow.getStyleClass().add("menu-arrow");
             button.getChildren().add(arrow);
         }
