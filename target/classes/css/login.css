@@ -1,4 +1,28 @@
 
+.label,
+.text-field,
+.text-area,
+.combo-box,
+.button {
+    -fx-font-family: "Poppins";
+}
+
+.label:disabled {
+    -fx-font-family: "Poppins Light";
+}
+
+.bold {
+    -fx-font-family: "Poppins SemiBold";
+}
+
+.medium {
+    -fx-font-family: "Poppins Medium";
+}
+
+.light {
+    -fx-font-family: "Poppins Light";
+}
+
 /* ========================================
    LOGIN PAGE STYLES
    ======================================== */

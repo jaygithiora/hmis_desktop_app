@@ -7,6 +7,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class Hmis_app extends Application {
@@ -15,6 +16,30 @@ public class Hmis_app extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+        Font.loadFont(getClass().getResourceAsStream("/fonts/Poppins-Black.ttf"),12);
+        Font.loadFont(getClass().getResourceAsStream("/fonts/Poppins-BlackItalic.ttf"),12);
+        Font.loadFont(getClass().getResourceAsStream("/fonts/Poppins-ExtraBold.ttf"),12);
+        Font.loadFont(getClass().getResourceAsStream("/fonts/Poppins-ExtraBoldItalic.ttf"),12);
+        Font.loadFont(getClass().getResourceAsStream("/fonts/Poppins-ExtraLight.ttf"),12);
+        Font.loadFont(getClass().getResourceAsStream("/fonts/Poppins-ExtraLightItalic.ttf"),12);
+        Font.loadFont(getClass().getResourceAsStream("/fonts/Poppins-Italic.ttf"),12);
+        Font.loadFont(getClass().getResourceAsStream("/fonts/Poppins-Light.ttf"),12);
+        Font.loadFont(getClass().getResourceAsStream("/fonts/Poppins-LightItalic.ttf"),12);
+        Font.loadFont(getClass().getResourceAsStream("/fonts/Poppins-Regular.ttf"),12);
+        Font.loadFont(getClass().getResourceAsStream("/fonts/Poppins-Medium.ttf"),12);
+        Font.loadFont(getClass().getResourceAsStream("/fonts/Poppins-MediumItalic.ttf"),12);
+        Font.loadFont(getClass().getResourceAsStream("/fonts/Poppins-SemiBold.ttf"),12);
+        Font.loadFont(getClass().getResourceAsStream("/fonts/Poppins-SemiBoldItalic.ttf"),12);
+        Font.loadFont(getClass().getResourceAsStream("/fonts/Poppins-Bold.ttf"),12);
+        Font.loadFont(getClass().getResourceAsStream("/fonts/Poppins-BoldItalic.ttf"),12);
+        Font.loadFont(getClass().getResourceAsStream("/fonts/Poppins-Thin.ttf"),12);
+        Font.loadFont(getClass().getResourceAsStream("/fonts/Poppins-ThinItalic.ttf"),12);
+        
+        System.out.println("Wacha tuone bana:"+Font.getFamilies().contains("Poppins"));
+        Font.getFamilies().stream()
+    .filter(f -> f.toLowerCase().contains("poppins"))
+    .forEach(System.out::println);
+
         primaryStage = stage;
         primaryStage.setTitle("My Application");
         //if (ConfigService.configExists()) {
@@ -31,6 +56,7 @@ public class Hmis_app extends Application {
         FXMLLoader loader = new FXMLLoader(Hmis_app.class.getResource("/login/login.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
+        scene.getRoot().setStyle("-fx-font-family: 'Poppins Regular';");
         primaryStage.setScene(scene);
         primaryStage.show();
         primaryStage.setMaximized(true);

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
@@ -7,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<VBox fx:id="sidebarRoot" styleClass="sidebar" stylesheets="@../../css/sidebar.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.githiora.hmis_app.controllers.dashboard.SidebarController">
+<VBox fx:id="sidebarRoot" styleClass="sidebar" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.githiora.hmis_app.controllers.dashboard.SidebarController">
     
     <!-- Sidebar Header -->
     <HBox styleClass="sidebar-header">
@@ -41,5 +42,9 @@
     <VBox style="-fx-padding: 15px; -fx-background-color: rgba(0,0,0,0.2);" styleClass="sidebar-footer">
         <Label style="-fx-text-fill: rgba(255,255,255,0.5); -fx-font-size: 11px;" text="Version 1.0.0" />
     </VBox>
+   <stylesheets>
+      <URL value="@../../css/sidebar.css" />
+      <URL value="@../../css/styles.css" />
+   </stylesheets>
     
 </VBox>
